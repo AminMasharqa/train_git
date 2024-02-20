@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Offer Modal Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#offerModal">
+        Add Offer
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="offerModal" tabindex="-1" role="dialog" aria-labelledby="offerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="offerModalLabel">Add Offer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form -->
+                    <form id="newOfferForm">
+                        <div class="form-group">
+                            <label for="offerTitle">BID $ </label>
+                            <input type="text" class="form-control" id="offerTitle" placeholder="Enter your bid">
+                        </div>
+                        <div class="form-group">
+                            <label for="offerDescription">Comment</label>
+                            <textarea class="form-control" id="offerDescription" rows="3" placeholder="comment for the client"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit Offer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Example function to handle form submission (prevent default form submit action for demonstration)
+$('#newOfferForm').submit(function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    alert('Offer submitted!');
+    // Close the modal after submission
+    $('#offerModal').modal('hide');
+    // Here, you can add your code to handle the form data.
+});
+</script>
+
+</body>
+</html>
